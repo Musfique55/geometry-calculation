@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="m-12">
+        <div class="bg-base-100 flex justify-between bg-[#1090d81a] px-10 py-5 rounded-lg items-center"> 
+            <h2 class="text-5xl font-bold">Interactive </br>
+                <span class="text-3xl font-medium"> Geometry Genius</span>
+            </h2>
+            <button class="text-xl font-bold btn-primary px-10 py-3 rounded-lg bg-[rgb(16,144,216)] text-white">Blog</button>
+        </div>
+    </header>
+    <main>
+        <section class="main-container flex mt-12">
+            <div class=" grid gap-6 grid-cols-1 lg: grid-cols-3 lg:ml-12 lg:mr-6">
+                <div id="first" class="card w-80 bg-base-100  border-gray-100 border">
+                    <figure class="py-12 px-6"><img src="images/triangle.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Triangle</h2>
+                      <p>Area (A) = 0.5 X b X h</p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="triangle-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="triangle-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="triangle-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculateTriangle()" class="btn btn-primary w-full" id="triangle-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                <div id="second" class="card w-80 bg-base-100 border-gray-100 border">
+                    <figure class="py-12 px-6"><img src="images/rectangle.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Rectangle</h2>
+                      <p>Area (A) = w X l</p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="rectangle-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="rectangle-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="rectangle-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculateRectangle()" class="btn btn-primary w-full" id="rectangle-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                <div id="third" class="card w-80 bg-base-100 border-gray-100 border">
+                    <figure class="py-12 px-6"><img src="images/parallelogram.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Parallelogram</h2>
+                      <p>Area (A) = b X h</p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="parallelogram-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="parallelogram-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="parallelogram-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculateParallelogram()" class="btn btn-primary w-full" id="parallelogram-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                <div id="fourth" class="card w-80 bg-base-100 border-gray-100 border">
+                    <figure class="py-12 px-6"><img src="images/rhombus.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Rhombus</h2>
+                      <p>Area (A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="rhombus-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="rhombus-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="rhombus-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculateRhombus()" class="btn btn-primary w-full" id="rhombus-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                <div id="fifth" class="card w-80 bg-base-100 border-gray-100 border">
+                    <figure class="py-12 px-6"><img src="images/pentagon.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Pentagon</h2>
+                      <p>Area (A) = 0.5 X p X b</p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="pentagon-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="pentagon-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="pentagon-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculatePentagon()" class="btn btn-primary w-full" id="pentagon-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>
+                <div id="sixth" class="card w-80 bg-base-100 border-gray-100 border ">
+                    <figure class="py-12 px-6"><img src="images/ellipse.png" alt="Shoes" class="h-48"/></figure>
+                    <div class="card-body text-center">
+                      <h2 class="text-2xl font-bold">Ellipse</h2>
+                      <p>Area (A) = &#960;ab</p>
+                      <div class="mb-12 mt-5">
+                        <input type="text"  id="ellipse-input-first" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                        <input type="text"  id="ellipse-input-second" class="bg-gray-100 w-24">
+                        <span>cm</span>
+                      </div>
+                      <div>
+                        <p>Area: <span id="ellipse-result"></span>cm<sup>2</sup></p>
+                      </div>
+                      <div>
+                        <button onclick="calculateEllipse()" class="btn btn-primary w-full" id="ellipse-btn">Calculate</button>
+                      </div>
+                    </div>
+                </div>      
+            </div>
+            <div class="grow border-gray-100 border text-center lg:mr-8 ">
+                <p>Area Calculation</p>
+            </div>
+        </section>
+    </main>
+  </body>
+  <script src="index.js"></script>
+  <script src="hover.js"></script>
+</html>
